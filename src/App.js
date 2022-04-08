@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Router} from '@reach/router'
 import Home from './Home'
+import DatawatcherType from './datawatchertype/DatawatcherType';
+import Navigation from './Navigation';
 
 class App extends Component {
   constructor() {
@@ -18,9 +20,10 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Navigation />
         <Router>
          <Home path="/"  />
-
+         <DatawatcherType path="datawatchertypes"/>
         </Router>
       </div>
     );
