@@ -20,8 +20,18 @@ class Navigation extends Component {
               <div className="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
+                        <Link to="/parameters" className="nav-item nav-link">
+                            Parameters
+                        </Link>
+                    </li>
+                    <li className="nav-item">
                         <Link to="/datawatchertypes" className="nav-item nav-link">
-                            Datawatcher Type
+                            Datawatcher Types
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/datawatchers" className="nav-item nav-link">
+                            Datawatchers
                         </Link>
                     </li>
                 </ul>

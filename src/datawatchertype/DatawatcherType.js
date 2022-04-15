@@ -1,4 +1,7 @@
 import { Component } from "react";
+import {Link} from '@reach/router';
+import { BiFolderPlus } from "react-icons/bi";
+
 import DatawatcherTypesDataService from "../data/DatawatcherTypesDataService";
 import DatawatcherTypeList from "./DatawatcherTypeList";
 
@@ -20,7 +23,6 @@ class DatawatcherType extends Component {
           this.setState({
             datawatcherTypesList: response.data
           });
-          console.log(response.data);
         })
         .catch(e => {
           console.log(e);
@@ -35,6 +37,9 @@ class DatawatcherType extends Component {
                 <div className="col-md-8">
                   <h1 className="font-weight-light text-center">
                     Datawatcher Types
+                    <Link to="/createdatawatchertype" title="Create Datawatcher Type">
+                      <BiFolderPlus />
+                    </Link>
                   </h1>
                 </div>
               </div>
