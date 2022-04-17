@@ -1,24 +1,36 @@
 import { Component } from "react";
 import {Link} from '@reach/router';
 import { BiFolderPlus } from "react-icons/bi";
+import ParametersDataService from "../data/ParametersDataService";
+import ParametersList from "./ParametersList";
 
 
 class Parameter extends Component {
     constructor(props) {
         super(props);
         this.state = {
+          parametersList: []
         };
     }
 
     componentDidMount () {
-
+      this.retrieveParameters();
     }
 
     retrieveParameters () {
-      
+      ParametersDataService.getAll()
+      .then(response => {
+        this.setState({
+          parametersList: response.data
+        });
+      })
+      .catch(e => {
+        console.log(e);
+      });
     }
 
     render () {
+      const parametersList = this.state.parametersList;
       return (
           <div className="container mt-4">
               <div className="row justify-content-center">
@@ -31,9 +43,9 @@ class Parameter extends Component {
                   </h1>
                 </div>
               </div>
-              {/* {this.state.datawatcherTypesList && (
-                <DatawatcherTypeList datawatcherTypes={datawatcherTypesList} />
-              )}   */}
+              {this.state.parametersList && (
+                <ParametersList parametersList={parametersList} />
+              )}  
           </div>    
 
           
