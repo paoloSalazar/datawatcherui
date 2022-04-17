@@ -7,6 +7,7 @@ import CreateDatawatcherType from './datawatchertype/CreateDatawatcherType';
 import Datawatcher from './datawatcher/Datawatcher';
 import CreateDatawatcher from './datawatcher/CreateDatawatcher';
 import Parameter from './parameters/Parameter';
+import CreateParameter from './parameters/CreateParameter';
 
 class App extends Component {
   constructor() {
@@ -29,6 +30,7 @@ class App extends Component {
          <Home path="/"  />
 
          <Parameter path="/parameters" />
+         <CreateParameter path="/createparameter"/>
 
          <DatawatcherType path="/datawatchertypes"/>
          <CreateDatawatcherType path="/createdatawatchertype"/>
